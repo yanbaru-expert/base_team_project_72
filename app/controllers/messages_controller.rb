@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
 
   def create
     Message.create(message_params)
-    redirect_to messages_path
+    # redirect_to messages_path
   end
 
   def show
@@ -17,9 +17,13 @@ class MessagesController < ApplicationController
   end
 
   def edit
+    @message = Message.find(params[:id])
   end
 
   def update
+    message = Message.find(params[:id])
+    message.update(message_params)
+    # redirect_to messages_path
   end
 
   def destroy
