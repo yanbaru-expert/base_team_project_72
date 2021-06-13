@@ -19,6 +19,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  #編集画面に対応するアクション
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  #更新を行うためのアクション
+  def update
+    user = User.find(params[:id])
+    user.update(user_params)
+  end
+
   private
 
   def user_params
