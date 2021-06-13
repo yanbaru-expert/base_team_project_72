@@ -30,6 +30,12 @@ class UsersController < ApplicationController
     user.update(user_params)
   end
 
+  #削除を行うためのアクション
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+  end
+
   private
 
   def user_params
